@@ -46,10 +46,10 @@ export function GameBoard({
   const totalCards = cards.length;
   const gridCols =
     totalCards <= 8
-      ? "grid-cols-2 sm:grid-cols-4"
+      ? "grid-cols-2 sm:grid-cols-3"
       : totalCards <= 10
       ? "grid-cols-2 sm:grid-cols-5"
-      : "grid-cols-3 sm:grid-cols-4 md:grid-cols-6";
+      : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6";
 
   return (
     <div
@@ -162,7 +162,7 @@ export function GameBoard({
         </div>
 
         {/* Grid de cartas */}
-        <div className={`grid ${gridCols} gap-3 max-w-3xl mx-auto`}>
+        <div className={`grid ${gridCols} gap-3 max-w-[1200px] mx-auto`}>
           <AnimatePresence>
             {cards.map((card, index) => (
               <motion.div

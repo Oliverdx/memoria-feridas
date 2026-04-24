@@ -10,7 +10,11 @@ import { motion } from "framer-motion";
 import { NIVEIS, PONTUACAO } from "@/lib/gameData";
 
 const HERO_BG_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663596017988/WeP2ABiaiWnTVCRVFYx4pY/game-hero-bg-fpUayacw8LVhbPptyY4SCU.webp";
+  "/images/hero-bg.png";
+
+  
+const HERO_BG_URL_MOBILE =
+  "/images/hero-bg-mobile.png";
 
 interface GameMenuProps {
   onStartLevel: (index: number) => void;
@@ -25,15 +29,16 @@ const DIFFICULTY_COLORS = [
 ];
 
 export function GameMenu({ onStartLevel, onStartGame }: GameMenuProps) {
+  const isMobile = window.innerWidth < 768;
+
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#FAFAF5" }}>
       {/* Hero Section */}
       <div
-        className="relative overflow-hidden"
+        className={`relative overflow-hidden bg-left bg-position[center top] bg-no-repeat`}
         style={{
-          backgroundImage: `url(${HERO_BG_URL})`,
+          backgroundImage: `url(${isMobile ? HERO_BG_URL_MOBILE : HERO_BG_URL})`,
           backgroundSize: "cover",
-          backgroundPosition: "center top",
         }}
       >
         {/* Overlay suave */}
@@ -53,7 +58,7 @@ export function GameMenu({ onStartLevel, onStartGame }: GameMenuProps) {
               </span>
             </div>
 
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-gray-800 mb-3 leading-tight">
+            <h1 className="font-serif text-3xl md:text-5xl font-bold text-gray-800 mb-3 leading-tight">
               Jogo da Memória
               <br />
               <span className="text-blue-700">Feridas</span>
@@ -61,7 +66,7 @@ export function GameMenu({ onStartLevel, onStartGame }: GameMenuProps) {
               <span className="text-emerald-700">Tratamentos</span>
             </h1>
 
-            <p className="text-gray-600 text-base max-w-xl mx-auto mb-6 leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto mb-6 leading-relaxed">
               Associe cada tipo de ferida ao seu tratamento correto. Teste seus conhecimentos
               em três níveis de dificuldade progressiva.
             </p>
