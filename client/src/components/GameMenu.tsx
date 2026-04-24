@@ -213,6 +213,53 @@ export function GameMenu({ onStartLevel, onStartGame }: GameMenuProps) {
           </table>
         </motion.div>
       </div>
+      <footer className="bg-gradient-to-b from-[#0f2a44] to-[#0a1f33] text-gray-300 mt-16">
+        <div className="max-w-6xl mx-auto px-6 py-12 text-center">
+
+          {/* Logo + Nome */}
+          <div className="flex flex-col items-center gap-4 mb-8">
+            <img
+              src="/images/uninassau-logo.png"
+              alt="UNINASSAU"
+              className="w-50 md:w-50"
+            />
+
+            <div className="w-16 h-[2px] bg-yellow-400 mt-2"></div>
+          </div>
+
+          {/* Descrição */}
+          <p className="text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-10">
+            Site desenvolvido com auxílio de inteligência artificial Manus.AI,
+            para o curso de Enfermagem da Faculdade{" "}
+            <span className="text-yellow-400 font-semibold">UNINASSAU</span>.
+          </p>
+
+          {/* Integrantes */}
+          <div className="mb-10">
+            <p className="text-yellow-400 font-semibold tracking-wider mb-3">
+              INTEGRANTES
+            </p>
+
+            <p className="text-xs md:text-sm leading-relaxed max-w-4xl mx-auto">
+              Ana Caroline de Almeida Soares Oliveira, Érica Rebouças Chaves,
+              Eliane Oliveira Silva, Hidson José Sousa Santos, João Victor Nolasco Moreira,
+              Loane Teixeira Campos, Samara Portugal Correia.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Linha inferior */}
+        <div className="border-t border-white/10 py-4 px-6 text-xs md:text-sm text-gray-400">
+          <div className="flex justify-center">
+
+            <span>
+              © {new Date().getFullYear()} – Todos os direitos reservados.
+            </span>
+
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
